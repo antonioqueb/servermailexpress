@@ -1,11 +1,13 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const fs = require('fs');
+const cors = require('cors');
 
 const app = express();
 const port = 2024;
 
 app.use(bodyParser.json());
+app.use(cors()); // Agrega esta línea para habilitar CORS
 
 app.post('/guardar', (req, res) => {
   const { correo } = req.body;
